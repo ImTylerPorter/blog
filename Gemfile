@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'redcarpet', '~> 3.3.3'
 gem 'friendly_id', '~> 5.1.0'
 gem 'pygments.rb', '~> 0.6.3'
+gem 'will_paginate', '~> 3.0.7'
 
 group :development, :test do
   gem 'byebug'
