@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 		@project = Project.new project_params
 
 		if @project.save
-			redirect_to @project, notice: "Nice TP! This one looks really good. It was also successfully saved!"
+			redirect_to @project, notice: "Nice TP! This one looks really COOL. It was also successfully saved!"
 		else
 			render 'new'
 		end
@@ -23,10 +23,20 @@ class ProjectsController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+
 	def update
+		if @project.update project_params
+			redirect_to @project, notice: "Nice TP! It was also successfully updated!"
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@project.destroy
+		redirect_to projects_path
 	end
 
 	private
