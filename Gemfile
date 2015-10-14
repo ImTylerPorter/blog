@@ -14,6 +14,8 @@ gem 'redcarpet', '~> 3.3.3'
 gem 'friendly_id', '~> 5.1.0'
 gem 'pygments.rb', '~> 0.6.3'
 gem 'will_paginate', '~> 3.0.7'
+gem 'mail_form', '~> 1.5.1'
+
 
 group :development, :test do
   gem 'byebug'
