@@ -11,7 +11,7 @@
 		<h2>Stuff I have written</h2>
 		<hr>
 
-		<% @post.each do |post|%>
+		<% @posts.each do |post|%>
 			<h3><a href="#"><%= link_to post.title, post %></a></h3>
 			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %></p>	
 		<% end %>
@@ -19,11 +19,9 @@
 	<div class="col-3 homepage_content">
 		<h2>Stuff I have built</h2>
 		<hr>
-		<h3><a href="#">Good times</a></h3>
-		<p class="date">Friday, April 10th</p>
-		<h3><a href="#">Grey Hairs</a></h3>
-		<p class="date">Friday, April 10th</p>
-		<h3><a href="#">Muffins</a></h3>
-		<p class="date">Friday, April 10th</p>
+		<% @projects.each do |project|%>
+			<h3><a href="#"><%= link_to project.title, project %></a></h3>
+			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %></p>	
+		<% end %>
 	</div>	
 </div><!--.wrapper-->
