@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '*path' => redirect_to('/')
-
+ get '*path' => redirect('/')
 
 end
