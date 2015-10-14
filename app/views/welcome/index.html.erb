@@ -1,0 +1,29 @@
+<div class="wrapper wrapper_padding clearfix">
+	<div class="col-1 about homepage_content">
+		<h2>About</h2>
+		<hr>
+		<p>I am a developer living in Nashville, TN.</p>
+		<p>Day job? No, not really. Other than running my <a href="http://www.cleverladder.co">web design &amp; development business</a>, I work in Live Entertainment.</p>
+		<p>You can catch me spitting truth on the <a href="http://www.twitter.com/imtylerporter"><em>Twitter</em></a>, snapping the causal photo on <a href="http://www.instagram.com/imtylerporter"><em>the gram</em></a>, or keeping in proffesional on <a href="https://www.linkedin.com/in/imtylerporter"><em>LinkedIn</em></a>.</p>
+		<p><strong>Work Hard. Stay Humble.</strong></p>
+	</div>
+	<div class="col-2 homepage_content">
+		<h2>Stuff I have written</h2>
+		<hr>
+
+		<% @post.each do |post|%>
+			<h3><a href="#"><%= link_to post.title, post %></a></h3>
+			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %></p>	
+		<% end %>
+	</div>
+	<div class="col-3 homepage_content">
+		<h2>Stuff I have built</h2>
+		<hr>
+		<h3><a href="#">Good times</a></h3>
+		<p class="date">Friday, April 10th</p>
+		<h3><a href="#">Grey Hairs</a></h3>
+		<p class="date">Friday, April 10th</p>
+		<h3><a href="#">Muffins</a></h3>
+		<p class="date">Friday, April 10th</p>
+	</div>	
+</div><!--.wrapper-->

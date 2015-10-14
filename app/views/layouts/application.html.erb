@@ -10,14 +10,21 @@
 </head>
 <body>
 	<header id="main_navigation" class="clearfix"> 
-		<a class="name" href="#">Tyler Porter</a>
+		<%= link_to "Tyler Porter", root_path, class: "name" %>
 			<nav>
 				<%= link_to "Articles", posts_path %>
 	        	<a href="project.html">Projects</a>
 	  			<a href="#">Contact</a>
 	    	</nav>  
 	</header>
-<%= yield %>
-
+	<%= yield %>
+	<footer id="main_footer">
+		<p class="copyright">&copy; 2015 Tyler Porter</p>
+		<nav>
+			<a href="http://www.twitter.com/imtylerporter" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="http://www.instagram.com/imtylerporter" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/imtylerporter" target="_blank"><i class="fa fa-linkedin"></i></a>
+		</nav>
+	</footer>
 </body>
 </html>
