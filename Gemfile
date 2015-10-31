@@ -16,6 +16,8 @@ gem 'pygments.rb', '~> 0.6.3'
 gem 'will_paginate', '~> 3.0.7'
 gem 'mail_form', '~> 1.5.1'
 gem 'devise', '~> 3.5.2'
+gem 'paperclip', '~> 4.3.1'
+
 
 group :development, :test do
   gem 'byebug'
