@@ -5,6 +5,12 @@
 				<hr>
 			</header>
 			<div id="content">
+				<div class="post_image">
+					<% if @post.post_image? %>
+						<%= image_tag @post.post_image.url %>
+					<% end %>
+				</div>
+				<br>
 				<%= markdown @post.content %>
 			</div>
 			<% if user_signed_in? %>

@@ -21,6 +21,16 @@
 	<br>
 	<br>
 
+
+	<%= f.label :post_image %>
+	<%= f.file_field :post_image %>
+
+	<%= f.check_box :post_image_delete %> <%= f.label 'Delete Image' %>
+
+	<br>
+	<br>
+	<br>
+
 	<%= f.submit %><br>
 
 <% end %> 
