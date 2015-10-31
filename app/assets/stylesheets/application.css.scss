@@ -1,3 +1,8 @@
+/*
+ *= require responsive-nav
+ */
+
+
 @import 'normalize';
 
 $dark: #424652;
@@ -86,6 +91,12 @@ hr {
 #main_navigation {
 	padding: 2.5em 5%;
 	border-bottom: 1px solid $border;
+	
+	@media (min-width: 769px){
+		.name{
+			float: left;
+		}
+	}
 	.name {
 		font-weight: 700;
 		font-size: .8em;
@@ -95,24 +106,102 @@ hr {
 		padding:1rem;
 		text-decoration: none;
 		color: $dark;
-		float: left;
-		img{
-			display: inline-block;
-			width: 10rem;
+		width: 15rem;
+	}
+	@media (min-width: 769px){
+		nav {
+			float: right;
 		}
 	}
 	nav {
-		float: right;
 		padding-top: 1.2rem;
-		a {
-			color: $dark;
-			text-decoration: none;
-			margin: 0 1rem;
-			font-size: 1rem;
-		}
+		overflow: visible;
+		@media (min-width: 769px){
+			li {
+				display: inline;
+				a {
+					color: $dark;
+					text-decoration: none;
+					margin: 0 1rem;
+					font-size: 1rem;
+				}
+			}
+		}	
+	}
+}
+/* ------------------------------------------
+  NECESSARY STYLES FOR RESPONSIVE NAV
+--------------------------------------------- */
+
+@media (max-width: 768px) {
+.nav-collapse{
+	ul{
+		margin: 0 0 1rem 0;
+ 		padding: 0;
+  		width: 100%;
+  		display: block;
+  		list-style: none;
+  		li {
+  			a {
+  				width: 100%;
+			    display: block;
+			    text-align: center;
+			    margin-top: 1rem;;
+			    color: $dark;
+			    text-decoration: none;
+			    padding: 1% 0;
+			    &:hover {
+			    	background: $highlight;
+			    }
+  			} 
+  		}	
 	}
 }
 
+@media (max-width:768px) {
+
+    .nav-toggle {
+        display: block; /* this activate the responsive nav */
+        float: right;
+       	-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    border: 0;
+	    cursor: pointer;
+	    width: 2.5rem;
+	    height: 2.5rem;
+	    text-indent: -9999px;
+	 	background: url("hamburger.svg");
+  		background-repeat: no-repeat;
+    }
+    
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+}
+
+@media (min-width: 769px) {
+  .js .nav-collapse {
+    position: relative;
+    max-height: none;
+  }
+  #nav-toggle {
+    display: none;
+  }
+}
 #page_title {
 	text-align: center;
 	border-bottom: 1px solid $border;
