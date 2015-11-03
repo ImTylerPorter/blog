@@ -17,11 +17,9 @@ class Post < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :title, use: :slugged
 
-
 	private
 	  def destroy_image?
 	    self.post_image.clear if @post_image_delete == "1"
 	  end
-
-
+  	belongs_to :user
 end
