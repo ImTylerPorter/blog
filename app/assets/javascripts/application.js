@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require responsive-nav
 //= require turbolinks
 //= require_tree .
