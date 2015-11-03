@@ -3,6 +3,9 @@ class Project < ActiveRecord::Base
   	validates_attachment_content_type :project_image, content_type: /\Aimage\/.*\Z/
 	before_save :destroy_image?
 
+	belongs_to :user
+
+	
 
   	def project_image_delete
 	    @project_image_delete ||= "0"

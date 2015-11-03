@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151031185848) do
-=======
-ActiveRecord::Schema.define(version: 20151103183234) do
->>>>>>> devise
+ActiveRecord::Schema.define(version: 20151103190803) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -40,10 +36,7 @@ ActiveRecord::Schema.define(version: 20151103183234) do
     t.string   "post_image_content_type"
     t.integer  "post_image_file_size"
     t.datetime "post_image_updated_at"
-<<<<<<< HEAD
-=======
     t.integer  "user_id"
->>>>>>> devise
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
@@ -60,9 +53,11 @@ ActiveRecord::Schema.define(version: 20151103183234) do
     t.string   "project_image_content_type"
     t.integer  "project_image_file_size"
     t.datetime "project_image_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
