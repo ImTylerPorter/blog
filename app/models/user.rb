@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
-  has_attached_file :avatar, :styles => { :medium => "300#" }
+  has_attached_file :avatar, :styles => { :medium => "200#" }
 
   validates_presence_of :avatar
    validates_attachment :avatar, :presence => true,
