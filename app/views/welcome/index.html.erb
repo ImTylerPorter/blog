@@ -19,7 +19,7 @@
 		<hr>
 		<% @projects.each do |project|%>
 			<h3><a href="#"><%= link_to project.title, project %></a></h3>
-			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %> | <%= project.user %></p>	
+			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %> | <%= link_to project.user, profile_path(project.user.user_name)%></p>	
 		<% end %>
 	</div>	
 </div><!--.wrapper-->

@@ -18,7 +18,7 @@ gem 'mail_form', '~> 1.5.1'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.1'
 gem "responsive-nav-rails"
-gem 'aws-sdk', '~> 2.1', '>= 2.1.35'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
