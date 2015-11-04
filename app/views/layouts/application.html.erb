@@ -15,11 +15,21 @@
 		<% end %>
 			<nav class="nav-collapse">
 				<ul class="clearfix">
-					<li><%= link_to "Articles", posts_path %><li>
-					<li><%= link_to "Projects", projects_path %></li>
-					<li><%= link_to "Contacts", new_contact_path %></li>
 					<% if user_signed_in? %>
+
+						<li><%= link_to new_post_path do %>
+ 							 <i class="fa fa-plus"></i> 
+						<% end %></li>
+						<li><%= link_to "Articles", posts_path %><li>
+						<li><%= link_to new_project_path do %>
+ 							 <i class="fa fa-plus"></i> 
+						<% end %></li>	
+						<li><%= link_to "Projects", projects_path %></li>
 						<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+						<li><%= link_to "Articles", posts_path %><li>
+						<li><%= link_to "Projects", projects_path %></li>
+						<li><%= link_to "Contact", new_contact_path %></li>
 					<% end %>
 				</ul>
 	    	</nav>  
