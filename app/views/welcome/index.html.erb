@@ -10,7 +10,7 @@
 
 		<% @posts.each do |post|%>
 			<h3><a href="#"><%= link_to post.title, post %></a></h3>
-			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %> | <%= link_to post.user.fullname, profile_path(post.user.user_name) %></p>
+			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %> | <%= link_to post.user, profile_path(post.user.user_name) %></p>
 
 		<% end %>
 	</div>
@@ -19,7 +19,7 @@
 		<hr>
 		<% @projects.each do |project|%>
 			<h3><a href="#"><%= link_to project.title, project %></a></h3>
-			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %> | <%= project.user.fullname %></p>	
+			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %> | <%= project.user %></p>	
 		<% end %>
 	</div>	
 </div><!--.wrapper-->
