@@ -12,6 +12,7 @@
 		    img {
 		    	margin: 0 auto;
     			padding: 0 1em;
+    			width: 100%;
 		    }
 		}
 		.col-2-profile{
@@ -30,5 +31,22 @@
 		}
 	}
 
+}
 
+@media (max-width:768px) {
+	#posts_wrapper{
+		.profile-header {
+			.col-1-profile, .col-2-profile {
+				width: 100%;
+				float: none;
+			}
+			.col-1-profile {
+				img{
+					width: 45%;
+					display: block;
+					margin-bottom: 2em;
+				}
+			}
+		}
+	}
 }

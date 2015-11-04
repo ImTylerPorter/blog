@@ -5,12 +5,25 @@
 .col-1{
 	width: 45%;
 	padding: 0 5% 0 2.5%;
+
 }
 
 .col-2, .col-3 {
 	width: 27.5%;
 	padding: 0 2.5%;
 }
+
+@media (max-width:768px){
+		.col-2, .col-3 {
+			width: 100%;
+			text-align: center;
+			margin-top: 2em;
+		}
+		hr{
+			text-align: center;
+			margin: 0 auto;
+		}
+	}
 
 .homepage_content{
 	h2 {
@@ -45,5 +58,17 @@
 			text-decoration: none;
 			color: $highlight;
 			font-weight: 700;
+		}
+	}
+
+@media (max-width:768px){
+		.col-1 {
+			width: 100%;
+		}
+		.about {
+			padding: 0 5%;
+		}
+		h2 {
+			text-align: center;
 		}
 	}
