@@ -2,13 +2,10 @@
 	<div class="col-1 about homepage_content">
 		<h2>About</h2>
 		<hr>
-		<p>I am a developer living in Nashville, TN.</p>
-		<p>Day job? No, not really. Other than running my <a href="http://www.cleverladder.co">web design &amp; development business</a>, I work in Live Entertainment.</p>
-		<p>You can catch me spitting truth on the <a href="http://www.twitter.com/imtylerporter"><em>Twitter</em></a>, snapping the causal photo on <a href="http://www.instagram.com/imtylerporter"><em>the gram</em></a>, or keeping in proffesional on <a href="https://www.linkedin.com/in/imtylerporter"><em>LinkedIn</em></a>.</p>
-		<p><strong>Work Hard. Stay Humble.</strong></p>
+		<%= markdown @tyler.bio %>
 	</div>
 	<div class="col-2 homepage_content">
-		<h2>Stuff I have written</h2>
+		<h2>Thoughts from my brain</h2>
 		<hr>
 
 		<% @posts.each do |post|%>
@@ -18,7 +15,7 @@
 		<% end %>
 	</div>
 	<div class="col-3 homepage_content">
-		<h2>Stuff I have built</h2>
+		<h2>Handcrafted by me</h2>
 		<hr>
 		<% @projects.each do |project|%>
 			<h3><a href="#"><%= link_to project.title, project %></a></h3>
