@@ -13,7 +13,7 @@
 
 		<% @posts.each do |post|%>
 			<h3><a href="#"><%= link_to post.title, post %></a></h3>
-			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %> | <%= link_to post.user.fullname, profile_path(post.user.nick_name) %></p>
+			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %> | <%= link_to post.user.fullname, profile_path(post.user.user_name) %></p>
 
 		<% end %>
 	</div>

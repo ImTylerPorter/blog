@@ -1,4 +1,19 @@
 <div id="posts_wrapper" class="skinny_wrapper">
+	<div class="profile-header">
+		<div class="image-circle">
+			<%= profile_avatar_select(@user) %>
+		</div>
+
+		<%= @user.bio %>
+
+		<% if user_signed_in? %>
+            <%= link_to 'Edit Profile', edit_profile_path(@user.user_name),
+                                      class: 'btn edit-button'%>
+        <% end %>                              
+
+
+	</div>	
+
 	<% @posts.each do |post| %>
 		<div class="post">
 			<p class="date"><%= post.created_at.strftime("%A, %b, %d") %></p>
