@@ -8,16 +8,17 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
+		@post = current_user.posts.build
 	end
 
 	def create
-		@post = Post.new post_params
+		@post = current_user.posts.build(post_params)
+
 
 		if @post.save
-			redirect_to @post, notice: 'Hellz yeah, TP! Your Article was succesfully saved!'
+			redirect_to @post, notice: 'Hellz yeah, #{current_user.first_name}! Your Article was succesfully saved!'
 		else
-			render 'new', notice: "Oh nom TP! I was unable to save your post."
+			render 'new', notice: "Oh no #{current_user.first_name}! I was unable to save your post."
 		end
 	end
 
