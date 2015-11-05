@@ -97,6 +97,7 @@ hr {
 			float: left;
 		}
 	}
+
 	.name {
 		font-weight: 700;
 		font-size: .8em;
@@ -107,6 +108,11 @@ hr {
 		text-decoration: none;
 		color: $dark;
 		width: 15rem;
+	}
+	@media (max-width: 480px){
+		.name{
+			width: 8rem;
+		}
 	}
 	@media (min-width: 769px){
 		nav {
@@ -174,7 +180,7 @@ hr {
 	    width: 2.5rem;
 	    height: 2.5rem;
 	    text-indent: -9999px;
-	 	background: url("hamburger.svg");
+	 	background-image: image-url("hamburger.svg");
   		background-repeat: no-repeat;
     }
     
