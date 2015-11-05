@@ -49,6 +49,13 @@
 }
 
 
-
-
+@media (max-width: 768px) {
+	#background-splash{
+		background-image: image-url("bg-small.jpg");
+		background-color: $dark;
+		h1 {
+			margin: 20vh 0 0;
+		}
+	}
+}
 
