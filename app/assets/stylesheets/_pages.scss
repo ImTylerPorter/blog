@@ -1,0 +1,54 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.wrapper_wide {
+	width: 90%;
+	margin: 0 auto;
+	.social-splash {
+		text-align: right;
+    	margin-top: 1rem;
+		a {
+			color: #fff;
+			margin-left: 1em;
+			&:hover {
+				color: $highlight;
+			}
+		}
+	}
+}
+
+#background-splash {
+	background-image: image-url("bg.jpg");
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	overflow: auto;
+	header {
+		padding: 3rem 0;	
+	}
+
+	h1 {
+		color: #fff;
+		font-size: 2.5rem;
+		font-weight: 400;
+		letter-spacing: 1px;
+		margin: 45vh 0 0;
+		text-align: right;
+		text-transform: uppercase;
+	}
+	h2 {
+		color: #edeff5;
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-align: right;
+		margin: 0;
+	}
+}
+
+
+
+
+

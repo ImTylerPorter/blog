@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'pages/home'
+
   get 'profiles/show'
 
   devise_for :users
@@ -12,7 +14,11 @@ Rails.application.routes.draw do
  patch ':user_name/edit', to: 'profiles#update', as: :update_profile
   get 'welcome/index'
 
-  root 'welcome#index'
+
+	authenticated :user do 
+	  	root 'welcome#index', as: "authenticated_root"
+	  end
+	root 'pages#home'
 
  get '*path' => redirect('/')
 
