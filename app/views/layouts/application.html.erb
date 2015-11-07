@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<title>Tyler Porter at your service.</title>
 	<%= favicon_link_tag 'favicon.ico' %>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="#{<%= image_tag "imgpreview.jpg" %>}" href="#{<%= link_to root_path, root %>}" / >
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
