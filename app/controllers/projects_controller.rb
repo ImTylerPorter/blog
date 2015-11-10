@@ -5,6 +5,16 @@ class ProjectsController < ApplicationController
 
 	def index
 		@projects = Project.all.order("created_at desc")
+		prepare_meta_tags title: "Projects", 
+						description: "Handcrafted projects by Tyler listed here!",
+						og: {
+							title: "Projects",
+							description: "Handcrafted projects by Tyler listed here!",
+						},
+						twitter: {
+							description: "Handcrafted projects by Tyler listed here!"
+						}
+
 	end
 
 	def new
@@ -22,6 +32,19 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
+	    prepare_meta_tags(title: @project.title,
+                  description: @project.description.truncate(120),
+                  image: @project.project_image.url(:original),
+                  og: {
+                  		title: @project.title,
+                  		description: @project.description.truncate(120),
+                  		image: @project.project_image.url(:original)
+                  },
+                  twitter: {
+                  		description: @project.description.truncate(120),
+                  		image: @project.project_image.url(:original)
+                  }
+				)
 	end
 
 	def edit

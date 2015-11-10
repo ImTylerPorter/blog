@@ -5,6 +5,15 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all.order("created_at desc").paginate(page: params[:page], per_page: 10)
+		prepare_meta_tags title: "Articles", 
+						  description: "Thoughts from Tyler's brain is listed on this page",
+						  og: {
+							title: "Articles",
+							description: "Thoughts from Tyler's brain is listed on this page",
+						},
+						  twitter: {
+							description: "Thoughts from Tyler's brain is listed on this page"
+						}
 	end
 
 	def new
@@ -25,6 +34,19 @@ class PostsController < ApplicationController
 	# Post found with before_action
 	def show
 		@post = Post.friendly.find(params[:id])
+	    prepare_meta_tags(title: @post.title,
+                  description: @post.content.truncate(120),
+                  image: @post.post_image.url(:original),
+                  og: {
+                  		title: @post.title,
+                  		description: @post.content.truncate(120),
+                  		image: @post.post_image.url(:original)
+                  },
+                  twitter: {
+                  		description: @post.content.truncate(120),
+                  		image: @post.post_image.url(:original)
+                  }
+				)
 	end
 
 	# Post found with before_action

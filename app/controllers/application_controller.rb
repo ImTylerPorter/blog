@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
     def prepare_meta_tags(options={})
 
-    site        = "Tyler Porter"
+    site        = "tylerporter.me"
     title       = [controller_name, action_name].join(" ")
     description = "Tyler Porter writes from his brain to your eyeballs."
     image       = options[:image] || ActionController::Base.helpers.asset_path("imgpreview.jpg", type: :image)  
@@ -17,13 +17,13 @@ class ApplicationController < ActionController::Base
 
     defaults = {
       site:        "tylerporter.me",
-      title:       "Tyler Porter at your service",
+      title:       title,
       image:       ActionController::Base.helpers.asset_path("imgpreview.jpg", type: :image),
       description: "A full grown man sharing what he is learning in web development",
       keywords:    %w[web software development mobile app],
       twitter:     {site_name: site,
                     site: '@imtylerporter',
-                    card: description,
+                    card: "summary",
                     description: description,
                     image: image},
       og:          {url: current_url,
