@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
                     image: image},
       og:          {url: current_url,
                     site_name: site,
-                    title: title,
+                    title: "OH MY GOSH! It's another blog!",
                     image: image,
                     description: description,
                     type: 'website'}
