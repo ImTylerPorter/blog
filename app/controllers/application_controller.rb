@@ -10,24 +10,24 @@ class ApplicationController < ActionController::Base
     site        = "Tyler Porter"
     title       = [controller_name, action_name].join(" ")
     description = "Tyler Porter writes from his brain to your eyeballs."
-    image       = options[:image] || image_path("imgpreview.jpg")  
+    image       = options[:image] || ActionController::Base.helpers.asset_path("imgpreview.jpg", type: :image)  
     current_url = request.url
 
     # Let's prepare a nice set of defaults
 
     defaults = {
-      site:        site_name,
-      title:       title,
-      image:       image,
-      description: description,
+      site:        "tylerporter.me",
+      title:       "Tyler Porter at your service",
+      image:       ActionController::Base.helpers.asset_path("imgpreview.jpg", type: :image),
+      description: "A full grown man sharing what he is learning in web development",
       keywords:    %w[web software development mobile app],
-      twitter:     {site_name: site_name,
+      twitter:     {site_name: "tylerporter.me",
                     site: '@thecookieshq',
                     card: 'summary',
                     description: description,
                     image: image},
       og:          {url: current_url,
-                    site_name: site_name,
+                    site_name: site,
                     title: title,
                     image: image,
                     description: description,
