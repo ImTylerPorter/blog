@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :title, use: :slugged
 
+  	def should_generate_new_friendly_id?
+		slug.blank? || title_changed?
+	end
+
 	private
 	  def destroy_image?
 	    self.post_image.clear if @post_image_delete == "1"

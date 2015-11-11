@@ -19,6 +19,30 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+blockquote {
+    border-left: 3px solid $highlight;
+    margin: 0;
+    padding: 0 40px;
+    -webkit-margin-before: 0;
+    -webkit-margin-start: 0;
+    -webkit-padding-start: 40px;
+    -webkit-margin-after: 0;
+    -webkit-margin-end: 0;
+    font-style: italic;
+    -webkit-padding-end: 40px;
+    p {
+    	color: $light;
+    }
+}
+
+a {
+	text-decoration: none;
+	color: $highlight;
+	&:hover {
+		color: darken($highlight, 15%);
+	}
+
+}
 .wrapper{
 	width: 90%;
 	margin: 0 auto;
