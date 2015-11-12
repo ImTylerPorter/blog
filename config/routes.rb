@@ -14,11 +14,13 @@ Rails.application.routes.draw do
  patch ':user_name/edit', to: 'profiles#update', as: :update_profile
 
 
-	authenticated :user do 
-	  	root 'welcome#index', as: "authenticated_root"
-	  end
-	    get 'welcome/index'
-	root 'pages#home'
+	# authenticated :user do 
+	#   	root 'welcome#index', as: "authenticated_root"
+	#   end
+	#     get 'welcome/index'
+	# root 'pages#home'
+
+ root 'welcome#index'
 
  get '*path' => redirect('/')
 
