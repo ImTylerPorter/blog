@@ -301,6 +301,28 @@ input[type="submit"], .button {
 	text-decoration: none;
 	padding: 1em 2em;
 }
+.email-fields {
+	text-align: center;
+	background: $border;
+    padding: 1%;
+    border-radius: .35em;
+	.email{
+		width: 50% !important;
+	    padding: 1em 2em !important;
+	    height: auto !important;
+	    margin-bottom: 1em !important;
+	}
+
+	.button-mail {
+		background: $highlight !important;
+		color: $white !important
+
+	}
+	h6 {
+		margin: 1em 0;
+	}
+}	
+
 
 @import 'welcome';
 @import 'post_projects';
