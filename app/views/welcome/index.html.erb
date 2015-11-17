@@ -5,7 +5,7 @@
 		<%= markdown @tyler.bio %>
 	</div>
 	<div class="col-2 homepage_content">
-		<h2>Thoughts from my brain</h2>
+		<h2>Let's learn Ruby on Rails together</h2>
 		<hr>
 
 		<% @posts.each do |post|%>
@@ -14,12 +14,5 @@
 
 		<% end %>
 	</div>
-	<div class="col-3 homepage_content">
-		<h2>Handcrafted by me</h2>
-		<hr>
-		<% @projects.each do |project|%>
-			<h3><a href="#"><%= link_to project.title, project %></a></h3>
-			<p class="date"><%= project.created_at.strftime("%A, %b, %d") %> | <%= link_to project.user.fullname, profile_path(project.user.user_name)%></p>	
-		<% end %>
-	</div>	
+	
 </div><!--.wrapper-->
