@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 	#     get 'welcome/index'
 	# root 'pages#home'
 
- root 'welcome#index'
+ root 'construction#index'
 
  get '*path' => redirect('/')
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+	<title>Tyler Porter at your service.</title>
+	<%= favicon_link_tag 'favicon.ico' %>
+	<meta name="google-site-verification" content="C05dE9API0uFznij8NeZno-yP10dDf5OrD0bwVaMJH0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= display_meta_tags %>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header id="main_navigation" class="clearfix"> 
+		<%= link_to root_path, title: "Tyler Porter Logo" do %>
+ 			<%= image_tag 'logo.svg', alt: 'Tyler Porter Logo', class: "name" %>
+		<% end %>
+			<nav class="nav-collapse">
+				<ul class="clearfix">
+					<% if user_signed_in? %>
+
+						<li><%= link_to new_post_path do %>
+ 							 <i class="fa fa-plus"></i> 
+						<% end %></li>
+						<li><%= link_to "Articles", posts_path %><li>
+						<li><%= link_to new_project_path do %>
+ 							 <i class="fa fa-plus"></i> 
+						<% end %></li>	
+						<li><%= link_to "Projects", projects_path %></li>
+						<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+						<li><%= link_to "Articles", posts_path %><li>
+						<li><%= link_to "Projects", projects_path %></li>
+						<li><%= link_to "Contact", new_contact_path %></li>
+					<% end %>
+				</ul>
+	    	</nav>  
+	</header>
+	<% if notice %>
+	   <p class="notice"><%= notice %></p>
+	<% elsif alert %>   
+       <p class="alert"><%= alert %></p>
+    <% end %>   
+	<%= yield %>
+	<footer id="main_footer">
+		<p class="copyright">&copy; 2015 Tyler Porter</p>
+		<nav>
+			<a href="http://www.twitter.com/imtylerporter" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="http://www.instagram.com/imtylerporter" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/imtylerporter" target="_blank"><i class="fa fa-linkedin"></i></a>
+		</nav>
+	</footer>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-70051031-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<script>
+  		var nav = responsiveNav(".nav-collapse",{
+  			  jsClass: "js", // String: 'JS enabled' class which is added to  element
+
+  		});
+	</script>
+</body>
+</html>
